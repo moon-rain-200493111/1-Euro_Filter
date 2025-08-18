@@ -57,7 +57,7 @@ signal_noisy = signal_clean + noise
 st.title("1 Euro Filter Demo")
 
 freq = st.slider("Freq", 1, 120, 60)
-min_cutoff = st.slider("Min Cutoff", 0.1, 5.0, 1.0)
+min_cutoff = st.slider("Min Cutoff", 0.1, 2.0, 1.0)
 beta = st.slider("Beta", 0.0, 0.2, 0.02)
 
 filter_obj = OneEuroFilter(freq=freq, min_cutoff=min_cutoff, beta=beta)
@@ -74,4 +74,5 @@ ax.legend()
 ax.grid(True)
 
 st.pyplot(fig)
+
 
