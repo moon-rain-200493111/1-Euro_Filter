@@ -46,19 +46,20 @@ class OneEuroFilter:
         
         return x_hat
 
-# ----- 模擬資料 -----
-np.random.seed(0)
-t = np.linspace(0, 5, 300)                      # 5 seconds at 60Hz
-signal_clean = np.sin(2 * np.pi * 0.5 * t)
-noise = np.random.normal(0, 0.1, len(t))
-signal_noisy = signal_clean + noise
-
 # ----- Streamlit UI -----
 st.title("1 Euro Filter Demo")
 
 freq = st.slider("Freq", 1, 60, 24)
-min_cutoff = st.slider("Min Cutoff", 0.1, 0.5, 0.2)
+min_cutoff = st.slider("Min Cutoff", 0.1, 1.0, 0.2)
 beta = st.slider("Beta", 0.0, 0.1, 0.02)
+
+# ----- 模擬資料 -----
+duration = 5   # seconds
+n_samples = int(freq * duration)
+t = np.linspace(0, duration, n_samples)
+signal_clean = np.sin(2 * np.pi * 0.5 * t)
+noise = np.random.normal(0, 0.1, len(t))
+signal_noisy = signal_clean + noise
 
 filter_obj = OneEuroFilter(freq=freq, min_cutoff=min_cutoff, beta=beta)
 filtered_signal = np.array([filter_obj.filter(x) for x in signal_noisy])
@@ -74,6 +75,8 @@ ax.legend()
 ax.grid(True)
 
 st.pyplot(fig)
+
+
 
 
 
