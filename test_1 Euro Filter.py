@@ -50,7 +50,7 @@ class OneEuroFilter:
 st.title("1 Euro Filter Demo")
 
 freq = st.slider("Freq", 1, 60, 24)
-min_cutoff = st.slider("Min Cutoff", 0.1, 1.0, 0.2)
+min_cutoff = st.slider("Min Cutoff", 0.1, 3.0, 0.2)
 beta = st.slider("Beta", 0.0, 0.1, 0.02)
 
 # ----- 模擬資料 -----
@@ -75,6 +75,7 @@ ax.legend()
 ax.grid(True)
 
 st.pyplot(fig)
+
 
 
 
