@@ -54,6 +54,7 @@ min_cutoff = st.slider("Min Cutoff", 0.1, 3.0, 0.2)
 beta = st.slider("Beta", 0.0, 0.1, 0.02)
 
 # ----- 模擬資料 -----
+np.random.seed(0)
 duration = 5   # seconds
 n_samples = int(freq * duration)
 t = np.linspace(0, duration, n_samples)
@@ -75,6 +76,7 @@ ax.legend()
 ax.grid(True)
 
 st.pyplot(fig)
+
 
 
 
