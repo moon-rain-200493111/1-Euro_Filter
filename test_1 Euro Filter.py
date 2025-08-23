@@ -56,9 +56,9 @@ signal_noisy = signal_clean + noise
 # ----- Streamlit UI -----
 st.title("1 Euro Filter Demo")
 
-freq = st.slider("Freq", 1, 120, 60)
-min_cutoff = st.slider("Min Cutoff", 0.1, 2.0, 1.0)
-beta = st.slider("Beta", 0.0, 0.2, 0.02)
+freq = st.slider("Freq", 1, 60, 24)
+min_cutoff = st.slider("Min Cutoff", 0.1, 0.5, 0.2)
+beta = st.slider("Beta", 0.0, 0.1, 0.02)
 
 filter_obj = OneEuroFilter(freq=freq, min_cutoff=min_cutoff, beta=beta)
 filtered_signal = np.array([filter_obj.filter(x) for x in signal_noisy])
@@ -74,5 +74,6 @@ ax.legend()
 ax.grid(True)
 
 st.pyplot(fig)
+
 
 
