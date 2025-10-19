@@ -67,6 +67,7 @@ filtered_signal = np.array([filter_obj.filter(x) for x in signal_noisy])
 
 # ----- 畫圖 -----
 fig, ax = plt.subplots(figsize=(10, 6))
+ax.set_xlim(0, 4)
 ax.plot(t, signal_noisy, label="Noisy Signal", alpha=0.5)
 ax.plot(t, signal_clean, label="Ground Truth", linestyle="--")
 ax.plot(t, filtered_signal, label="1 Euro Filter Output", linewidth=2)
@@ -76,6 +77,7 @@ ax.legend()
 ax.grid(True)
 
 st.pyplot(fig)
+
 
 
 
