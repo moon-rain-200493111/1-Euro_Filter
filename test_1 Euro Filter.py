@@ -75,12 +75,13 @@ ax.set_xlabel("Time (s)")
 ax.set_ylabel("Signal Value")
 ax.legend(
     loc='lower left',
-    bbox_to_anchor=(0.02, 0.02),
+    bbox_to_anchor=(0.015, 0.015),
     bbox_transform=ax.transAxes
 )
 ax.grid(True)
 
 st.pyplot(fig)
+
 
 
 
