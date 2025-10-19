@@ -73,6 +73,7 @@ ax.plot(t, signal_clean, label="Ground Truth", linestyle="--")
 ax.plot(t, filtered_signal, label="1 Euro Filter Output", linewidth=2)
 ax.set_xlabel("Time (s)")
 ax.set_ylabel("Signal Value")
+ax.title('Skeleton Joint Smoothing with 1 Euro Filter')
 ax.legend(
     loc='lower left',
     bbox_to_anchor=(0.015, 0.015),
@@ -81,6 +82,7 @@ ax.legend(
 ax.grid(True)
 
 st.pyplot(fig)
+
 
 
 
